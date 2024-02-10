@@ -45,7 +45,13 @@ def count_down(count):
        window.after(1, count_down, count - 1)
    else:
        if reps < 8:
+           marks = ""
            start_timer()
+           work_sessions = math.floor(reps/2)
+           for _ in range(work_sessions):
+               marks += "✔"
+           check_marks.config(text=marks)
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -62,7 +68,7 @@ timer_text = canvas.create_text((100, 130), text="00:00", font=("bold", 25), fil
 canvas.grid(row=1, column=1)
 
 
-check_marks = Label(text="✔", bg=YELLOW, fg=GREEN, font=25)
+check_marks = Label(text="", bg=YELLOW, fg=GREEN, font=25)
 check_marks.grid(row=3, column=1)
 
 def action():
