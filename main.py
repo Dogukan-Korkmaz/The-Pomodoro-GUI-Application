@@ -19,6 +19,7 @@ def reser_timer():
     label_timer.config(text="TİMER", font=("bold", 25), fg=GREEN, bg=YELLOW)
     canvas.itemconfig(timer_text, text="00:00")
     reps = 0
+    button_start.config(state="normal")
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
     global reps
@@ -37,7 +38,7 @@ def start_timer():
         count_down(long_break_sec)
         label_timer.config(text="BREAK", font=("bold", 25), fg=PINK, bg=YELLOW)
         reps += 1
-
+    button_start.config(state="disabled")
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 def count_down(count):
